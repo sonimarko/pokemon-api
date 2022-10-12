@@ -41,7 +41,6 @@ class PokemonWizard(models.TransientModel):
 			raise UserError("Pokemon Not Found")
 		else:
 			pokemon_obj = self.env['ns.pokemon']
-			pokemon_moves_obj = self.env['ns.pokemon.move']
 			
 			data = response.json()
 
@@ -50,7 +49,7 @@ class PokemonWizard(models.TransientModel):
 
 			# Moves
 			for move in data['moves']:
-				pokemon_moves.append(move['move']['name'])
+				pokemon_moves.append((0,0,{'name':move['move']['name']}))
 
 			# Image
 			image_url = data['sprites']['front_default']
@@ -60,10 +59,5 @@ class PokemonWizard(models.TransientModel):
 				'name': pokemon_name,
 				'type': pokemon_type,
 				'image': pokemon_image,
-			})
-
-			for move in pokemon_moves:
-				pokemon_moves_obj.create({
-					'name': move,
-					'pokemon_id': new_pokemon.id,
+				'move_ids': pokemon_moves,
 			})
