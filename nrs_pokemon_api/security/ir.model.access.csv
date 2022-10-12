@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ns_pokemon,access.ns.pokemon,model_ns_pokemon,,1,1,1,1
+access_ns_pokemon_move,access.ns.pokemon.move,model_ns_pokemon_move,,1,1,1,1
+access_ns_pokemon_wizard,access.ns.pokemon.wizard,model_ns_pokemon_wizard,,1,1,1,1
