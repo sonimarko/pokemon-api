@@ -49,8 +49,24 @@
                                 </form>
                             </field>
                         </page>
+                        <page string="Pokemon Ability" name="pokemon_ability">
+                            <field name="ns_ability_ids">
+                                <form>
+                                    <group>
+                                        <field name="name" required="True"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
+
+                <div class="o_attachment_preview"/>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
